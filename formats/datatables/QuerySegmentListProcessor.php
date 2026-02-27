@@ -166,7 +166,7 @@ class QuerySegmentListProcessor {
 
 				$this->fromTables[$subQuery->alias] = $joinTable;
 
-				ksort( $this->fromTables );
+				ksort( $this->fromTables, SORT_NATURAL );
 				$this->joinConditions[$subQuery->alias] = [ $joinType . ' JOIN', "$joinField$op=" . $subQuery->joinfield ];
 
 				$query->from .= " $joinType JOIN $t ON $joinField$op=" . $subQuery->joinfield;
